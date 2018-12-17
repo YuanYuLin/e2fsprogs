@@ -126,6 +126,15 @@ def MAIN_INSTALL(args):
     #iopc.installBin(args["pkg_name"], ops.path_join(src_include_dir, "."), dst_include_dir)
     return False
 
+def MAIN_SDKENV(args):
+    set_global(args)
+
+    libs = ""
+    libs += " -lext2fs -lcom_err -lblkid -luuid -le2p"
+    iopc.add_libs(libs)
+
+    return False
+
 def MAIN_CLEAN_BUILD(args):
     set_global(args)
     return False
