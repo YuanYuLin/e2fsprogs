@@ -76,27 +76,33 @@ def MAIN_EXTRACT(args):
     ops.copyto(ops.path_join(src_sbin_dir, "tune2fs"), dst_sbin_dir)
 
     ops.mkdir(dst_lib_dir)
-    ops.copyto(ops.path_join(src_lib_dir, "libext2fs.so.2.4"), dst_lib_dir)
-    ops.ln(dst_lib_dir, "libext2fs.so.2.4", "libext2fs.so.2")
-    ops.ln(dst_lib_dir, "libext2fs.so.2.4", "libext2fs.so")
 
-    ops.copyto(ops.path_join(src_lib_dir, "libcom_err.so.2.1"), dst_lib_dir)
-    ops.ln(dst_lib_dir, "libcom_err.so.2.1", "libcom_err.so.2")
-    ops.ln(dst_lib_dir, "libcom_err.so.2.1", "libcom_err.so")
+    lib_so = "libext2fs.so.2.4"
+    ops.copyto(ops.path_join(src_lib_dir, lib_so), dst_lib_dir)
+    ops.ln(dst_lib_dir, lib_so, "libext2fs.so.2")
+    ops.ln(dst_lib_dir, lib_so, "libext2fs.so")
 
-    ops.copyto(ops.path_join(src_lib_dir, "libblkid.so.1.1.0"), dst_lib_dir)
-    ops.ln(dst_lib_dir, "libblkid.so.1.1.0", "libblkid.so.1.1")
-    ops.ln(dst_lib_dir, "libblkid.so.1.1.0", "libblkid.so.1")
-    ops.ln(dst_lib_dir, "libblkid.so.1.1.0", "libblkid.so")
+    lib_so = "libcom_err.so.2.1"
+    ops.copyto(ops.path_join(src_lib_dir, lib_so), dst_lib_dir)
+    ops.ln(dst_lib_dir, lib_so, "libcom_err.so.2")
+    ops.ln(dst_lib_dir, lib_so, "libcom_err.so")
 
-    ops.copyto(ops.path_join(src_lib_dir, "libuuid.so.1.3.0"), dst_lib_dir)
-    ops.ln(dst_lib_dir, "libuuid.so.1.3.0", "libuuid.so.1.3")
-    ops.ln(dst_lib_dir, "libuuid.so.1.3.0", "libuuid.so.1")
-    ops.ln(dst_lib_dir, "libuuid.so.1.3.0", "libuuid.so")
+    lib_so = "libblkid.so.1.1.0"
+    ops.copyto(ops.path_join(src_lib_dir, lib_so), dst_lib_dir)
+    ops.ln(dst_lib_dir, lib_so, "libblkid.so.1.1")
+    ops.ln(dst_lib_dir, lib_so, "libblkid.so.1")
+    ops.ln(dst_lib_dir, lib_so, "libblkid.so")
 
-    ops.copyto(ops.path_join(src_lib_dir, "libe2p.so.2.3"), dst_lib_dir)
-    ops.ln(dst_lib_dir, "libe2p.so.2.3", "libe2p.so.2")
-    ops.ln(dst_lib_dir, "libe2p.so.2.3", "libe2p.so")
+    lib_so = "libuuid.so.1.3.0"
+    ops.copyto(ops.path_join(src_lib_dir, lib_so), dst_lib_dir)
+    ops.ln(dst_lib_dir, lib_so, "libuuid.so.1.3")
+    ops.ln(dst_lib_dir, lib_so, "libuuid.so.1")
+    ops.ln(dst_lib_dir, lib_so, "libuuid.so")
+
+    lib_so = "libe2p.so.2.3"
+    ops.copyto(ops.path_join(src_lib_dir, lib_so), dst_lib_dir)
+    ops.ln(dst_lib_dir, lib_so, "libe2p.so.2")
+    ops.ln(dst_lib_dir, lib_so, "libe2p.so")
 
     return True
 
